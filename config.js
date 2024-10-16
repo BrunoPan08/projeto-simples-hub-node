@@ -1,4 +1,3 @@
-
 const { initializeApp } = require("firebase/app");
 const { getFirestore, collection } = require("firebase/firestore");
 
@@ -15,6 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const usersCollection = collection(db, "Users");
+const clientesCollection = collection(db, "clientes");
+const certificadosCollection = collection(db, "certificados");
 
-module.exports = usersCollection;
+module.exports = { clientesCollection, certificadosCollection };
